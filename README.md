@@ -105,7 +105,7 @@ All figures are for the full dataset (no slicer filters applied).
 ## Files
 
 - `Bike_Sales_Dashboard.xlsx`: cleaned data, PivotTables and dashboard
-- `images/dashboard.png`: dashboard screenshot
+- `Dashboard.png`: dashboard screenshot
 
 ## Credits
 
