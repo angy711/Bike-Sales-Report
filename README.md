@@ -2,7 +2,7 @@
 
 An interactive Excel dashboard that explores which customer groups buy bikes, built with data cleaning, PivotTables, PivotCharts and slicers.
 
-![Dashboard preview](images/dashboard.png)
+![Dashboard preview](Dashboard.png)
 
 ## Business Problem
 
