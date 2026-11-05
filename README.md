@@ -31,7 +31,7 @@ Customer-level data with one row per customer.
 | Commute Distance | Distance bands (0-1, 1-2, 2-5, 5-10, 10+ miles) |
 | Region | Europe / North America / Pacific |
 | Age | Customer age |
-| **Age Brackets** | *Added by me:* Adult / Mid-Age / Old |
+| **Age Brackets** | *Derived from Age:* Adult / Mid-Age / Old |
 | Purchased Bike | Yes / No (target variable) |
 
 ## Process
@@ -46,7 +46,7 @@ Customer-level data with one row per customer.
    - Average income by gender and purchase status
    - Number of purchases by age bracket
    - Number of purchases by commute distance
-   - Purchase rate (% of customers who bought) per age bracket and commute distance, using *Show Values As → % of Row Total*
+   - **My own addition:** purchase rate (% of customers who bought) per age bracket and commute distance, using *Show Values As → % of Row Total*
 4. **Dashboard**
    - PivotCharts linked to the PivotTables
    - Slicers for Marital Status, Region and Education to filter all charts at once
@@ -59,23 +59,30 @@ Customer-level data with one row per customer.
 | Customer Age Bracket | Which age groups buy bikes most often? |
 | Customer Commute | How does commute distance relate to buying a bike? |
 
+## My Additions Beyond the Tutorial
+
+The dashboard layout follows a YouTube tutorial (see Credits). I extended it with:
+
+- Two extra PivotTables showing the **purchase rate** (% of row total) by age bracket and by commute distance. Counts alone can be misleading when groups differ in size. For example, the 0-1 mile group has the most buyers, but the 2-5 mile group has the highest purchase rate.
+- Removal of duplicate records and a check for blanks before building the PivotTables, plus the fix for stale "(blank)" slicer items.
+- The business framing, key insights, recommendations and limitations in this README.
+
 ## Key Insights
 
 All figures are for the full dataset (no slicer filters applied).
 
 - **Income:** Customers who bought a bike have a higher average income than those who did not, for both genders (women: 55,774 € vs 53,440 €; men: 60,124 € vs 56,208 €). The difference is modest, so income alone is not a strong predictor.
-- **Age:** Mid-Age customers are the largest segment and buy slightly more often than they abstain (~390 buyers vs ~345 non-buyers). Older customers are much less likely to buy (~60 buyers vs ~130 non-buyers).
-- **Commute distance:** Customers living within 1 mile of work are the most likely to buy (~200 buyers vs ~165 non-buyers). Beyond 5 miles, non-buyers outnumber buyers.
-- **Purchase rate by age:** 53.2% of Mid-Age customers bought a bike, compared with 42.2% of Adults and 31.2% of Old customers. Mid-Age customers are the most likely to buy, and the purchase rate drops sharply for older customers.
-<!-- TODO: add purchase rate by commute distance once calculated -->
+- **Age:** Mid-Age customers are by far the largest segment and the only age group where buyers outnumber non-buyers. Older customers are much less likely to buy.
+- **Commute distance:** The 0-1 mile group has the most buyers in absolute terms (200 of 366 customers). Beyond 5 miles, non-buyers clearly outnumber buyers (5-10 miles: 76 vs 116; more than 10 miles: 33 vs 78).
+- **Purchase rate by age:** Overall, 48.1% of the 1,000 customers bought a bike. The rate is highest for Mid-Age customers (53.2%), followed by Adults (42.2%) and Old customers (31.2%).
+- **Purchase rate by commute distance:** The rate is highest for customers with a 2-5 mile commute (58.6%), followed by 0-1 miles (54.6%) and 1-2 miles (45.6%). It falls for longer commutes: 39.6% for 5-10 miles and only 29.7% for more than 10 miles.
 
-
-Note: these are associations in the data, not proof of cause and effect.
+> These are associations in the data, not proof of cause and effect.
 
 ## Recommendations
 
 - Focus campaigns on Mid-Age customers, the largest group with a slight tilt towards buying.
-- Target customers with short commutes (0-1 miles), who are the most likely buyers.
+- Target customers with commutes up to 5 miles, especially 0-1 miles (largest buyer group) and 2-5 miles (highest purchase rate).
 - Review the offer for older customers and long-distance commuters, where purchase rates are lowest (for example, models better suited to them).
 - Consider income in targeting, but as a secondary factor given the small gap.
 
@@ -90,8 +97,9 @@ Note: these are associations in the data, not proof of cause and effect.
 
 ## Limitations
 
-- The data shows correlations, not causes.
-- Small sample size; results may not generalize.
+- The data shows correlations, not causes, and no statistical tests were run.
+- The dataset has only 1,000 customers, so results may not generalize.
+- Purchase rates were calculated per variable; combined effects (for example age and commute together) were not analysed.
 - Age brackets are my own definition, and other cut-offs could change the picture.
 
 ## Files
@@ -101,4 +109,4 @@ Note: these are associations in the data, not proof of cause and effect.
 
 ## Credits
 
-Dataset and dashboard idea based on a YouTube tutorial:
+The dataset and the base dashboard (income, age bracket and commute charts with slicers) are based on a YouTube tutorial: [https://www.youtube.com/watch?v=zXnQNytHCPM&t=9300s]. The purchase-rate PivotTables, the analysis and this documentation are my own work.
