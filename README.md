@@ -77,8 +77,6 @@ All figures are for the full dataset (no slicer filters applied).
 - **Purchase rate by age:** Overall, 48.1% of the 1,000 customers bought a bike. The rate is highest for Mid-Age customers (53.2%), followed by Adults (42.2%) and Old customers (31.2%).
 - **Purchase rate by commute distance:** The rate is highest for customers with a 2-5 mile commute (58.6%), followed by 0-1 miles (54.6%) and 1-2 miles (45.6%). It falls for longer commutes: 39.6% for 5-10 miles and only 29.7% for more than 10 miles.
 
-> These are associations in the data, not proof of cause and effect.
-
 ## Recommendations
 
 - Focus campaigns on Mid-Age customers, the largest group with a slight tilt towards buying.
